@@ -8,29 +8,18 @@ public class managescript : MonoBehaviour {
 	int texWidth;
 	int texHeight;
 
-	// Use this for initialization
 	void Start () {
-		texWidth=3;
-		texHeight=3;
+		// todo: adjust the size of the blocks depending on the number of tiles
+		texWidth=Preferences.TilesX;
+		texHeight=Preferences.TilesY;
 		puzzlePieces = new GameObject[texWidth*texHeight];
-		/*
-		puzzleTexture = new Texture2D(3, 3, TextureFormat.ARGB32, false);
-	    puzzleTexture.SetPixel(0, 0, Color.white);
-	    puzzleTexture.SetPixel(1, 0, Color.black);
-	    puzzleTexture.SetPixel(2, 0, Color.white);
-	    puzzleTexture.SetPixel(0, 1, Color.black);
-	    puzzleTexture.SetPixel(1, 1, Color.white);
-	    puzzleTexture.SetPixel(2, 1, Color.black);
-	    puzzleTexture.SetPixel(0, 2, Color.white);
-	    puzzleTexture.SetPixel(1, 2, Color.black);
-	    puzzleTexture.SetPixel(2, 2, Color.white);
-		puzzleTexture.filterMode = FilterMode.Point;
-		puzzleTexture.Apply();*/
+
 		Debug.Log("load texture");
 		puzzleTexture = (Texture2D)Resources.Load("image");
 		Debug.Log("texture loaded  " + puzzlePieces.Length + " -- " + puzzleTexture.height);
 
 		
+		// todo: fix error when tilesX != tilesY
 		for (int i = 0; i < puzzlePieces.Length; i++) {
 			puzzlePieces[i] = GameObject.CreatePrimitive (PrimitiveType.Cube);
 			puzzlePieces[i].transform.localScale = new Vector3(100,100,100);
@@ -44,7 +33,6 @@ public class managescript : MonoBehaviour {
     	}
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		/* for animated texture
 		time += Time.deltaTime;

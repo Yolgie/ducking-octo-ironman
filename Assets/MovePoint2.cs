@@ -6,31 +6,47 @@ using System.Collections;
 
 
 public class MovePoint2 : MonoBehaviour {
-
-    private Vector3 screenPoint;
-    private Vector3 offset;
+	public ArrayList puzzlePieces;
+	private Vector3 screenPoint;
+	private Vector3 offset;
+	
+	public MovePoint2()
+	{
+		puzzlePieces = new ArrayList();
+	}
 
     void OnMouseDown() 
     { 
-       screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+		screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
  
-       offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+		offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
  
-       Screen.showCursor = false;
+		Screen.showCursor = false;
+		
     }
  
     void OnMouseDrag() 
     { 
-       Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
  
-       Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
+		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
  
-       transform.position = curPosition;
+		transform.position = curPosition;
  
+		foreach(GameObject go in puzzlePieces)
+		{
+			// todo: insert movement
+		}
     }
  
     void OnMouseUp()
     {
-       Screen.showCursor = true;
+		CheckTouchingObjects();
+		Screen.showCursor = true;
     }
+	
+	void CheckTouchingObjects()
+	{
+		// todo: check if the right objects are touching, if yes -> add them to the list
+	}
 }

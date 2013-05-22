@@ -45,16 +45,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Orthello\Standard Assets\Editor\OTPrefabBreaker.cs" />
-     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\lorem.txt" />
-     <None Include="Assets\Orthello\Examples\4 - Follow Target View\-orthello-config.xml" />
      <None Include="Assets\Orthello\-Read-Me.txt" />
      <None Include="Assets\Orthello\-Update-Upgrade info.txt" />
-     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\img.xml" />
-     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\glyph.xml" />
-     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\chalk.xml" />
      <None Include="Assets\Orthello\Standard Assets\OT\_Base\TintedAlpha.shader" />
-     <None Include="Assets\Orthello\Examples\0 - Simple Examples\RotateTowards\-read-me.txt" />
-     <None Include="Assets\Orthello\Examples\0 - Simple Examples\Persistance\-read-me.txt" />
  <Reference Include="UnityEditor.Graphs">
  <HintPath>D:\Program Files (x86)\Unity\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
  </Reference>
@@ -62,8 +55,6 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{806FB76C-0570-2B4F-E344-A9269B66BDA9}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript.unityproj">
-      <Project>{CF591FE4-8DF2-8D3E-BA66-752783A0C77E}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -45,19 +45,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Orthello\Standard Assets\Editor\OTPrefabBreaker.cs" />
-     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\lorem.txt" />
-     <None Include="Assets\Orthello\Examples\4 - Follow Target View\-orthello-config.xml" />
      <None Include="Assets\Orthello\-Read-Me.txt" />
      <None Include="Assets\Orthello\-Update-Upgrade info.txt" />
-     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\img.xml" />
-     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\glyph.xml" />
-     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\chalk.xml" />
      <None Include="Assets\Orthello\Standard Assets\OT\_Base\TintedAlpha.shader" />
-     <None Include="Assets\Orthello\Examples\0 - Simple Examples\RotateTowards\-read-me.txt" />
-     <None Include="Assets\Orthello\Examples\0 - Simple Examples\Persistance\-read-me.txt" />
- <Reference Include="Assembly-UnityScript">
- <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>D:\Program Files (x86)\Unity\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
  </Reference>
