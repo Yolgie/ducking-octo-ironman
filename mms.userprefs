@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\managescript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PieceLogic.cs">
     <Files>
-      <File FileName="Assets\MovePoint2.cs" Line="39" Column="1" />
-      <File FileName="Assets\managescript.cs" Line="21" Column="1" />
-      <File FileName="Assets\GuiPlay.cs" Line="10" Column="25" />
-      <File FileName="Assets\mainmenu.cs" Line="29" Column="52" />
-      <File FileName="Assets\Preferences.cs" Line="6" Column="1" />
+      <File FileName="Assets\MainGame.cs" Line="25" Column="92" />
+      <File FileName="Assets\GuiPlay.cs" Line="13" Column="78" />
+      <File FileName="Assets\Preferences.cs" Line="7" Column="27" />
+      <File FileName="Assets\PieceLogic.cs" Line="57" Column="55" />
+      <File FileName="Assets\GuiMainMenu.cs" Line="30" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

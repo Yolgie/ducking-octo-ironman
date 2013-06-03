@@ -1,0 +1,10 @@
+bugs:
+- teilweise werden die sounds nicht abgespielt
+- ein paar mal muss man nachdem alle teile verbunden wurden nochmal die teile bewegen um die 'sou-win' anzeige anzuzeigen
+
+todo:
+- verschiedene bilder laden
+- bessere hintergrundbilder und sounds
+- animationen sollten auch geladen werden können
+- dokumentation schreiben
+- präsentation vorbereiten

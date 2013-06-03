@@ -2,14 +2,34 @@ using UnityEngine;
 using System.Collections;
 
 public class GuiPlay : MonoBehaviour {
-	void OnGUI () 
-	{
-		// http://docs.unity3d.com/Documentation/Components/gui-Basics.html
-		GUI.Box(new Rect(10,10,100,90), "Menu");
+	private bool showMenu;
+	
+	void Start () {
+		showMenu = false;
+	}
 		
-		// back to menu button
-		if(GUI.Button(new Rect(20,40,80,20), "Exit to Main Menu")) {
-			Application.LoadLevel(0);
+	void OnGUI () {
+		if(Preferences.HasWon) {
+				GUI.Box(new Rect(Screen.width/2 - 100,Screen.height/2 -100,200,100), "YOU WON !!!");
+				
+				// back to menu button
+				if(GUI.Button(new Rect(Screen.width/2 - 75,Screen.height/2 - 50, 150, 20), "Exit to Main Menu")) {
+					Application.LoadLevel(0);
+				}			
+		} else {
+			
+			// check for escape key
+			if (Event.current.Equals (Event.KeyboardEvent ("escape"))) {
+				showMenu = !showMenu;
+			}
+			if(showMenu) {
+				GUI.Box(new Rect(Screen.width/2 - 100,Screen.height/2 -100,200,100), "Menu");
+				
+				// back to menu button
+				if(GUI.Button(new Rect(Screen.width/2 - 75,Screen.height/2 - 50, 150, 20), "Exit to Main Menu")) {
+					Application.LoadLevel(0);
+				}
+			}
 		}
 
 	}
