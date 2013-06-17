@@ -7,19 +7,19 @@ Direct3D:
     VRAM:     1010 MB (via DXGI)
     Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 DF24=1 INTZ=1 RAWZ=0 NULL=1 RESZ=1 SlowINTZ=1
 Begin MonoManager ReloadAssembly
-Platform assembly: D:\mms\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading D:\mms\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: D:\mms\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading D:\mms\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.072 seconds
+Platform assembly: D:\GitHub\ducking-octo-ironman\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\GitHub\ducking-octo-ironman\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\GitHub\ducking-octo-ironman\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\GitHub\ducking-octo-ironman\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.051 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-Platform assembly: D:\mms\test_Data\Managed\System.Xml.dll (this message is harmless)
+Platform assembly: D:\GitHub\ducking-octo-ironman\test_Data\Managed\System.Xml.dll (this message is harmless)
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 252.
-Total: 1.286833 ms (FindLiveObjects: 0.043053 ms CreateObjectMapping: 0.034124 ms MarkObjects: 0.441701 ms  DeleteObjects: 0.012437 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 253.
+Total: 0.871283 ms (FindLiveObjects: 0.017540 ms CreateObjectMapping: 0.055810 ms MarkObjects: 0.292447 ms  DeleteObjects: 0.007972 ms)
 
 load texture
  
@@ -40,48 +40,8 @@ UnityEngine.SendMouseEvents:DoSendMouseEvents(Int32, Int32)
  
 (Filename:  Line: -1)
 
-InvalidOperationException: List has changed.
-  at System.Collections.ArrayList+SimpleEnumerator.MoveNext () [0x00000] in <filename unknown>:0 
-  at PieceLogic.CheckTouchingObjects () [0x00000] in <filename unknown>:0 
-  at PieceLogic.OnMouseUp () [0x00000] in <filename unknown>:0 
-UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
-UnityEngine.HitInfo:SendMessage(String)
-UnityEngine.SendMouseEvents:SendEvents(Int32, HitInfo)
-UnityEngine.SendMouseEvents:DoSendMouseEvents(Int32, Int32)
- 
-(Filename:  Line: -1)
-
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 225.
-Total: 0.967596 ms (FindLiveObjects: 0.016264 ms CreateObjectMapping: 0.013713 ms MarkObjects: 0.288939 ms  DeleteObjects: 0.233128 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 257.
-Total: 0.878618 ms (FindLiveObjects: 0.015945 ms CreateObjectMapping: 0.018178 ms MarkObjects: 0.346344 ms  DeleteObjects: 0.011481 ms)
-
-load texture
- 
-(Filename: C:/BuildAgent/work/7535de4ca26c26ac/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
-
-texture loaded  9 -- 512
- 
-(Filename: C:/BuildAgent/work/7535de4ca26c26ac/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
-
-InvalidOperationException: List has changed.
-  at System.Collections.ArrayList+SimpleEnumerator.MoveNext () [0x00000] in <filename unknown>:0 
-  at PieceLogic.CheckTouchingObjects () [0x00000] in <filename unknown>:0 
-  at PieceLogic.OnMouseUp () [0x00000] in <filename unknown>:0 
-UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
-UnityEngine.HitInfo:SendMessage(String)
-UnityEngine.SendMouseEvents:SendEvents(Int32, HitInfo)
-UnityEngine.SendMouseEvents:DoSendMouseEvents(Int32, Int32)
- 
-(Filename:  Line: -1)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 226.
-Total: 1.700150 ms (FindLiveObjects: 0.022962 ms CreateObjectMapping: 0.023599 ms MarkObjects: 0.464344 ms  DeleteObjects: 0.467852 ms)
+Total: 3.278793 ms (FindLiveObjects: 0.043691 ms CreateObjectMapping: 0.045605 ms MarkObjects: 0.809094 ms  DeleteObjects: 0.857569 ms)
 

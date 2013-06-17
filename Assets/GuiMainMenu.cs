@@ -9,6 +9,7 @@ public class GuiMainMenu : MonoBehaviour {
 		Preferences.TilesY=3;
 		Preferences.MinimumTiles = 2;
 		Preferences.SnapRange = 10;
+		Preferences.Image = 0;
 	}
 	
 	void OnGUI () 
@@ -27,6 +28,7 @@ public class GuiMainMenu : MonoBehaviour {
 		
 		// startbutton
 		if(GUI.Button(new Rect(Screen.width/2 - 50,Screen.height/2 -50,100,25), "Play")) {
+			Preferences.Image = 1;
 			Preferences.HasWon = false;
 			Application.LoadLevel(1);
 		}

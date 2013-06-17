@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MainGame.cs">
+    <Files>
+      <File FileName="Assets\TextureGenerator.cs" Line="4" Column="8" />
+      <File FileName="Assets\GuiMainMenu.cs" Line="12" Column="20" />
+      <File FileName="Assets\PieceLogic.cs" Line="1" Column="1" />
+      <File FileName="Assets\GuiPlay.cs" Line="1" Column="1" />
+      <File FileName="Assets\MainGame.cs" Line="71" Column="80" />
+      <File FileName="Assets\Preferences.cs" Line="8" Column="25" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

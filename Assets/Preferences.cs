@@ -5,4 +5,5 @@ static public class Preferences{
 	static public int MinimumTiles {get; set;}
 	static public int SnapRange{get; set;}
 	static public bool HasWon{get; set;}
+	static public int Image{get; set;}
 }
