@@ -80,7 +80,9 @@ public class PieceLogic : MonoBehaviour {
 		
 		foreach(GameObject go2 in ms.PuzzlePieces) {
 			CheckTouchingObject(gameObject, go2);
-			foreach(GameObject go1 in puzzlePieces) {
+			
+			ArrayList puzzlePiecesTmp = (ArrayList)puzzlePieces.Clone();
+			foreach(GameObject go1 in puzzlePiecesTmp) {
 				CheckTouchingObject(go1, go2);
 			}		
 		}
