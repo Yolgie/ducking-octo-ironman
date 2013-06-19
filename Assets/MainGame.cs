@@ -21,10 +21,11 @@ public class MainGame : MonoBehaviour {
 	void Start () {
 		texWidth=Preferences.TilesX;
 		texHeight=Preferences.TilesY;
-		
 		puzzlePieces = new GameObject[texWidth*texHeight];
+		TextureGenerator texGen = new TextureGenerator();
+		Color[] colors = new Color[512*512];
 		
-		
+		// generate the puzzle-pieces and set their attributes
 		for (int i = 0; i < puzzlePieces.Length; i++) {
 			puzzlePieces[i] = GameObject.CreatePrimitive (PrimitiveType.Cube);
 			puzzlePieces[i].transform.localScale = new Vector3(400/texWidth,400/texHeight,100);
@@ -47,16 +48,51 @@ public class MainGame : MonoBehaviour {
 		switch(Preferences.Image)
 		{
 		case 0:
+			// just load the image and set it as texture
 			puzzleTexture = (Texture2D)Resources.Load("image");
 			for (int i = 0; i < puzzlePieces.Length; i++) {
 				puzzlePieces[i].renderer.material.mainTexture = puzzleTexture;	    	}
 			break;
 		case 1:
-			TextureGenerator texGen = new TextureGenerator();
+			// just load the image and set it as texture
+			puzzleTexture = (Texture2D)Resources.Load("image2");
+			for (int i = 0; i < puzzlePieces.Length; i++) {
+				puzzlePieces[i].renderer.material.mainTexture = puzzleTexture;	    	}
+			break;
+		case 2:
+			// generate a procedural texture for each rgb channel
+
 			mapR = texGen.Generate (512, 512, 2);
 			mapG = texGen.Generate (512, 512, 2);
 			mapB = texGen.Generate (512, 512, 2);
 			
+			puzzleTexture = new Texture2D(512, 512, TextureFormat.ARGB32, false);
+			
+			// generate texture
+			for(int x=0; x<512; x++)
+			{
+				for(int y=0; y<512; y++)
+				{
+					colors[x*512+y] = new Color(mapR[x,y],mapG[x,y],mapB[x,y]);
+				}
+			}
+			
+			// ... and set the texture in one step, so we don't wast too much time
+			puzzleTexture.SetPixels(colors);
+			puzzleTexture.Apply();
+			
+			// set initial texture
+			for (int i = 0; i < puzzlePieces.Length; i++) {
+				puzzlePieces[i].renderer.material.mainTexture = puzzleTexture;
+	    	}
+			break;
+		case 3:
+			// generate a procedural texture for each rgb channel
+			mapR = texGen.Generate (512, 512, 2);
+			mapG = texGen.Generate (512, 512, 2);
+			mapB = texGen.Generate (512, 512, 2);
+			
+			// generate the 90 textures for the animation
 			puzzleTextures = new Texture2D[90];
 			for(int i=0; i<90; i++)
 			{
@@ -66,17 +102,24 @@ public class MainGame : MonoBehaviour {
 				{
 					for(int y=0; y<512; y++)
 					{
+						// interpolate the colors from the generated textures ...
 						float c1=(rComp[i%9] * (i%9)/9.0f + rComp[(i+1)%9] * (1.0f - (i%9)/9.0f));
 						float c2=(gComp[i%9] * (i%9)/9.0f + gComp[(i+1)%9] * (1.0f - (i%9)/9.0f));
 						float c3=(bComp[i%9] * (i%9)/9.0f + bComp[(i+1)%9] * (1.0f - (i%9)/9.0f));
 						float r = (c1*mapR[x,y] + c2*mapG[x,y] + c3*mapB[x,y])/3.0f;
 						float g = (c3*mapR[x,y] + c1*mapG[x,y] + c2*mapB[x,y])/3.0f;
 						float b = (c2*mapR[x,y] + c3*mapG[x,y] + c1*mapB[x,y])/3.0f;
-						puzzleTextures[i].SetPixel(x, y, new Color(r, g, b));
+						
+						// ... store it in an array ...
+						colors[x*512+y] = new Color(r, g, b);
 					}
 				}
+				
+				// ... and set the texture in one step, so we don't wast too much time
+				puzzleTextures[i].SetPixels(colors);
 				puzzleTextures[i].Apply();
-			}			
+			}
+			// set initial texture
 			for (int i = 0; i < puzzlePieces.Length; i++) {
 				puzzlePieces[i].renderer.material.mainTexture = puzzleTextures[0];
 	    	}
@@ -88,8 +131,11 @@ public class MainGame : MonoBehaviour {
 		switch(Preferences.Image)
 		{
 		case 0:
-			break;
 		case 1:
+		case 2:
+			break;
+		case 3:
+			// calculate the actual texture to be shown and set it
 			time += Time.deltaTime*10.0f;
 			while(time > 1.0) {
 				time-=1.0f;

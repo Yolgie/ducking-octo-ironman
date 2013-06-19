@@ -1,4 +1,7 @@
 
+/* simple static preferances class, used to transfer data between the scenes
+ * 
+ * */
 static public class Preferences{
 	static public int TilesX {get; set;}
 	static public int TilesY {get; set;}

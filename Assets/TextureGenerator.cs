@@ -28,6 +28,7 @@ public class TextureGenerator {
 	}
 	
 	//http://www.smokycogs.com/blog/plasma-fractals/
+	// also implement http://www.gutgames.com/post/Creating-Marble-Like-Textures-Procedurally.aspx ?
 	private float gRoughness;  
 	private float gBigSize;  	
 	

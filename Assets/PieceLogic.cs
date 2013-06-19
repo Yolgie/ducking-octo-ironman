@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PieceLogic : MonoBehaviour {
 	// todo: use methods instead of public variables
-	public ArrayList puzzlePieces;
+	public ArrayList puzzlePieces= new ArrayList();
 	public int x;
 	public int y;
 	
@@ -11,11 +11,9 @@ public class PieceLogic : MonoBehaviour {
 	private Vector3 offset;
 	private Vector3 oldPos;
 	
-	public PieceLogic()
-	{
-		puzzlePieces = new ArrayList();
-	}
-
+	/* the player selects this piece -> we need to save the offset between mousepoint and the objectbasepoint
+	 * also we hide the cursor
+	 * */
     void OnMouseDown() 
     { 
 		if(!Preferences.HasWon) {
@@ -30,6 +28,9 @@ public class PieceLogic : MonoBehaviour {
 		
     }
  
+	/*
+	 * calculate the new position, when we drag the piece with the mouse
+	 * */
     void OnMouseDrag() 
     { 
 		if(!Preferences.HasWon) {
@@ -41,13 +42,15 @@ public class PieceLogic : MonoBehaviour {
 	 
 			foreach(GameObject go in puzzlePieces)
 			{
-				// todo: insert movement of joined blocks
 				go.transform.position -= oldPos-transform.position;
 			}
 			oldPos=transform.position;
 		}
     }
  
+	/* when the mousebutton is released, we need to check if there are new connections
+	 * also, we check if the puzzle is finished
+	 */
     void OnMouseUp()
     {
 		if(!Preferences.HasWon) {
@@ -65,6 +68,9 @@ public class PieceLogic : MonoBehaviour {
 		}
     }
 	
+	/* check if there are pieces connecting
+	 * when there are pieces addad to this list, we play a sound notification
+	 * */
 	void CheckTouchingObjects()
 	{
 		int numPieces = puzzlePieces.Count;
@@ -72,7 +78,6 @@ public class PieceLogic : MonoBehaviour {
 		GameObject startup = GameObject.Find("Startup");
         MainGame ms = startup.GetComponent<MainGame>();
 		
-		// todo: check also the childs
 		foreach(GameObject go2 in ms.PuzzlePieces) {
 			CheckTouchingObject(gameObject, go2);
 			foreach(GameObject go1 in puzzlePieces) {
@@ -88,6 +93,9 @@ public class PieceLogic : MonoBehaviour {
 		
 	}
 	
+	/* check if the 2 gameobjects can be connected
+	 * 
+	 * */
 	void CheckTouchingObject(GameObject go1, GameObject go2) {
 		if(go2 != go1 && !puzzlePieces.Contains(go2)) {
 	        PieceLogic mp1 = go1.GetComponent<PieceLogic>();
@@ -150,21 +158,21 @@ public class PieceLogic : MonoBehaviour {
 		}		
 	}
 	
-	// add an array of pieces to this piece
+	// add an array of childpieces to this piece
 	public void AddPieces(ArrayList puzzlePieces) {
 		foreach(GameObject go in puzzlePieces) {
 			AddPiece(go);
 		}
 	}
 	
-	// adds 1 piece to this piece
+	// adds a child piece to this piece
 	public void AddPiece(GameObject go) {
 		if(go != gameObject && !puzzlePieces.Contains(go)) {
 			puzzlePieces.Add(go);
 		}
 	}
 	
-	// recalculate the position of the piece in relation to this piece
+	// recalculate the position of the given piece in relation to this piece
 	public void AdjustPosition(GameObject go) {
         PieceLogic mp = go.GetComponent<PieceLogic>();
 		go.transform.position=gameObject.transform.position + new Vector3((mp.x-x)*400/Preferences.TilesX,(mp.y-y)*400/Preferences.TilesY,0);
