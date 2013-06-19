@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PieceLogic.cs">
     <Files>
-      <File FileName="Assets\MainGame.cs" Line="78" Column="5" />
+      <File FileName="Assets\MainGame.cs" Line="130" Column="1" />
       <File FileName="Assets\TextureGenerator.cs" Line="31" Column="98" />
-      <File FileName="Assets\GuiMainMenu.cs" Line="74" Column="71" />
-      <File FileName="Assets\PieceLogic.cs" Line="43" Column="42" />
+      <File FileName="Assets\GuiMainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\PieceLogic.cs" Line="99" Column="4" />
       <File FileName="Assets\GuiPlay.cs" Line="1" Column="1" />
-      <File FileName="Assets\Preferences.cs" Line="10" Column="38" />
+      <File FileName="Assets\Preferences.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

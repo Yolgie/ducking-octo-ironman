@@ -86,8 +86,19 @@ public class PieceLogic : MonoBehaviour {
 		}
 		
 		if(numPieces != puzzlePieces.Count) {
+			
+			float volume = puzzlePieces.Count/(float)(Preferences.TilesX * Preferences.TilesY - 1);
+			
+			GameObject bgm = GameObject.Find("BGM");
+			AudioSource audio = bgm.GetComponent<AudioSource>();
+			audio.volume = volume;
+			
+			GameObject stat = GameObject.Find("StaticNoise");
+			audio = stat.GetComponent<AudioSource>();
+			audio.volume = 1.0f - volume;
+			
 			GameObject clicksound = GameObject.Find("clicksound");
-			AudioSource audio = clicksound.GetComponent<AudioSource>();
+			audio = clicksound.GetComponent<AudioSource>();
 			audio.Play();
 		}
 		
